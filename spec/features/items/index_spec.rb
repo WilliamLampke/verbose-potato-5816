@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Items Index' do   
+  it 'shows list of items (item name, price, and supermarket) and amount of customers who have bought that item' do
     harristeeter = Supermarket.create!(name: 'Harris Teeter', location: 'Charlotte')
 
     
@@ -19,4 +20,9 @@ RSpec.describe 'Items Index' do
     customeritem5 = CustomerItem.create!(item_id: soda.id, customer_id: david.id)
 
     visit "/items"
+    save_and_open_page
+    expect(page).to have_content("Total Customers: 2")
+    expect(page).to have_content("Total Customers: 2")
+    expect(page).to have_content("Total Customers: 1")
+  end
 end

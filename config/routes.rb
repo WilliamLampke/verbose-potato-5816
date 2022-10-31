@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   get '/customers', to: 'customers#index'
   get '/customers/:id', to: 'customers#show'
 
-  get '/items', to: 'itesm#index'
+  get '/items', to: 'items#index'
+
+  get '/supermarkets', to: 'supermarkets#index'
+  get '/supermarkets/:id', to: 'supermarkets#show'
 end

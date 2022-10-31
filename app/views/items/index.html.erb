@@ -1,0 +1,8 @@
+<h1>Items Index</h1>
+<% @items.each do |item| %>
+<h3>Name: <%= item.name %></h3>
+<h3>Price: <%= item.price %></h3>
+<h3>Supermarket: <%= item.supermarket.name %></h3>
+<h3>Total Customers: <%= item.customers.length %></h3>
+<br>
+<% end %>
