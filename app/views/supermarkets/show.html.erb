@@ -1,0 +1,11 @@
+<h1><%= @supermarket.name %></h1>
+<%= customer_list = '' %>
+<% @items.each do |item| %>
+<% item.customers.each do |customer| %>
+<% if ! customer_list.include? customer.name %>
+<% customer_list += customer.name += ", " %>
+<% end %>
+<% end %>
+<% end %>
+<%= customer_list.slice!(-2..-1)%>
+<h3>Customers who've shopped here: <%= customer_list%></h3>
