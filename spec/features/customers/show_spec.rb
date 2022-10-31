@@ -32,7 +32,9 @@ RSpec.describe 'Customer Show' do
         customeritem3 = CustomerItem.create!(item_id: cookies.id, customer_id: william.id)
         
         papertowels = Item.create!(name: 'Paper Towels', price: 5, supermarket_id: harristeeter.id)
-        binding.pry
         visit "/customers/#{william.id}"
+        fill_in "itemid", with: papertowels.id
+        binding.pry
+        click_on("Submit")
     end
 end
