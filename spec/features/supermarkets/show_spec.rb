@@ -20,7 +20,6 @@ RSpec.describe 'Supermarket Show' do
     customeritem5 = CustomerItem.create!(item_id: soda.id, customer_id: david.id)
 
     visit "/supermarkets/#{harristeeter.id}"
-    save_and_open_page
-    expect(page).to have_content()
+    expect(page).to have_content("Customers who've shopped here: William, David")
   end
 end
