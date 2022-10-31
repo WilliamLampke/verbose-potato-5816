@@ -1,0 +1,10 @@
+<h2><%= @customer.name %></h2>
+<% @items.each do |item| %>
+<h3><%= item.name %></h3>
+<h3><%= item.price %></h3>
+<h3><%= item.supermarket.name %></h3>
+<% end %>
+<form>
+  <label for="itemid">Item ID:</label><br>
+  <input type="text" id="itemid" name="itemid"><br>
+</form>
