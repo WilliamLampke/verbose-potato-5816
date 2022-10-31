@@ -5,3 +5,4 @@ RSpec.describe Item, type: :model do
     it { should belong_to :supermarket }
   end
 end
+  
