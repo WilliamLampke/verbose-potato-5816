@@ -1,10 +1,12 @@
 class CustomersController < ApplicationController
   def show
     @customer = Customer.find(params[:id])
-    @items = @customer.items
-    binding.pry
-    if params["itemid"] != nil
-        # @customer << Item.find(params["itemid"])
+
+    unless params['itemid'].nil?
+      CustomerItem.create!(item_id: params['itemid'].to_i, customer_id: @customer.id)
+      # @customer << Item.find(params["itemid"].to_i)
     end
+
+    @items = @customer.items
   end
 end
